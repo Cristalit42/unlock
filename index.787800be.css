@@ -321,6 +321,7 @@ button {
 
 @media (width <= 700px) {
   .header__main-menu {
+    max-width: none;
     margin: 0 auto;
   }
 }
@@ -385,6 +386,12 @@ button {
   }
 }
 
+@media (width <= 700px) {
+  .header__menu-list {
+    width: 100%;
+  }
+}
+
 .header__main-search {
   margin-left: 40px;
 }
@@ -407,14 +414,21 @@ button {
 }
 
 .cards-row__content {
-  grid-template-columns: repeat(auto-fit, minmax(310px, 317px));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 24px;
   display: grid;
 }
 
 @media (width <= 700px) {
   .cards-row__content {
-    grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(191px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (width <= 450px) {
+  .cards-row__content {
+    grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
     gap: 16px;
   }
 }
@@ -471,6 +485,7 @@ button {
 }
 
 .cards-row__categories {
+  white-space: nowrap;
   align-items: center;
   margin-bottom: 16px;
   display: flex;
@@ -818,7 +833,7 @@ footer .container {
 
 @media (width <= 650px) {
   .footer__bottom {
-    grid-template-columns: repeat(2, 185px);
+    grid-template-columns: 185px 130px;
     gap: 24px;
     display: grid;
   }
@@ -1662,18 +1677,31 @@ footer .container {
 }
 
 .products__heading-btns .products__dropdown-wrapper:last-child {
+  order: 4;
   grid-column: 4 / 1;
 }
 
 @media (width <= 1150px) {
   .products__heading-btns {
-    grid-template-columns: 70px 1fr 1fr;
+    grid-template-columns: 1fr 1fr 70px;
     min-width: 360px;
     max-width: 400px;
     margin-top: 16px;
     margin-left: auto;
     display: grid;
   }
+}
+
+.products__dropdown-wrapper--assort {
+  order: 1;
+}
+
+.products__dropdown-wrapper--price {
+  order: 2;
+}
+
+.products__dropdown-wrapper--quantity {
+  order: 3;
 }
 
 .products__content {
@@ -2556,7 +2584,7 @@ footer .container {
   border-radius: 10px;
   width: 100%;
   margin-bottom: 0;
-  padding: 16px 0 16px 52px;
+  padding: 16px 20px 16px 52px;
   position: relative;
 }
 
@@ -2606,6 +2634,10 @@ footer .container {
   .cart__item-wrapper {
     flex-direction: column;
   }
+}
+
+.cart__item-wrapper .cart__item {
+  gap: 32px;
 }
 
 .cart__item-btns {
