@@ -1423,7 +1423,14 @@ footer .container {
   .new__heading {
     margin-bottom: 24px;
   }
+}
 
+.watch .cards-row__content {
+  grid-template-columns: repeat(auto-fit, minmax(227px, 317px));
+  justify-content: start;
+}
+
+@media (width <= 700px) {
   .reviews {
     padding-right: 0 !important;
   }
